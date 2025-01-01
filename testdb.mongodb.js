@@ -47,3 +47,5 @@ Les ObjectId font 12 octets, ils sont rapides à générer et ordonnés.
  * $min
  * $max
  */
+
+//mongorestore -d sample_mflix sample_mflix/

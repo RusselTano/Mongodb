@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"sample_mflix.sessions"},{"v":{"$numberInt":"2"},"unique":true,"key":{"user_id":{"$numberDouble":"1.0"}},"name":"user_id_1","ns":"sample_mflix.sessions"}],"uuid":"3075a28e2951473cae7d4bd79562a894","collectionName":"sessions"}
