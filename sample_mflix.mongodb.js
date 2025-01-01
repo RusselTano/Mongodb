@@ -1,22 +1,28 @@
-use("sample_mflix")
-
-db.movies.find({
-  // title: /.*murder.*/i
-  title: { $in: [/.*cops.*/i, /.*thief.*/i] }
-})
-
+// use("sample_mflix")
 
 // db.movies.countDocuments(
 //     {
-//         title: { $regex: /^The land/, $options: 'i' }
+//         'tomatoes.viewer.rating': { $exists: false }
 //     }
 // )
+
+// db.movies.find(
+//     {
+//         'imdb.rating': { $type: 2 }
+//     }
+// )
+
+// use('sample_mflix');
+// db.movies.find(
+//     {
+//         'tomatoes': { $type: 'null'}
+//     }
+// )
+
 use('sample_mflix');
 db.movies.find(
     {
-        $expr: {
-            $lt: ['$imdb.rating', {$multiply: ['$tomatoes.viewer.rating', 2] }]
-        }
+        'tomatoes': null
     }
 )
-//L'opérateur $expr permet notamment de comparer des champs d'un même document entre eux..
+//retourne tout les documents dont la valeur du champs  du champs est null et tout les document dont la valeurs n'est pas definis

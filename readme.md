@@ -13,3 +13,7 @@ $not
 # Les opérateurs d'évaluation
 $regex
 $expr permet notamment de comparer des champs d'un même document entre eux..
+
+# Les opérateurs d'élément
+$exists L'opérateur $exists permet de sélectionner les documents qui ont (true) ou non (false) le champ spécifié.
+$type L'opérateur $type permet de sélectionner les documents où la valeur d'un champ est d'un type BSON spécifié.
