@@ -1,28 +1,11 @@
+use("sample_supplies")
+
+db.sales.find({
+  "items.name": "printer paper"
+})
+
 // use("sample_mflix")
-
-// db.movies.countDocuments(
-//     {
-//         'tomatoes.viewer.rating': { $exists: false }
-//     }
-// )
-
-// db.movies.find(
-//     {
-//         'imdb.rating': { $type: 2 }
-//     }
-// )
-
-// use('sample_mflix');
-// db.movies.find(
-//     {
-//         'tomatoes': { $type: 'null'}
-//     }
-// )
-
-use('sample_mflix');
-db.movies.find(
-    {
-        'tomatoes': null
-    }
-)
-//retourne tout les documents dont la valeur du champs  du champs est null et tout les document dont la valeurs n'est pas definis
+// db.movies.find({
+//   genres: ["Fantasy"], la valeur du tableau = fantasy
+//   genres: "Fantasy", contien fantasy et bien d'autres
+// })
