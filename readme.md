@@ -21,3 +21,6 @@ $exists L'opérateur $exists permet de sélectionner les documents qui ont (true
 $type L'opérateur $type permet de sélectionner les documents où la valeur d'un champ est d'un type BSON spécifié.
 
 # Chapitre 5 : Les opérateurs de tableaux
+
+## Effectuer des recherches sur des tableaux avec $all et $elemMatch
+L'opérateur $all permet de rechercher les tableaux qui contiennent plusieurs éléments spécifiés.

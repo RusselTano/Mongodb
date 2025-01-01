@@ -1,7 +1,13 @@
 use("sample_supplies")
 
 db.sales.find({
-  "items.name": "printer paper"
+  items: {
+    $elemMatch: {
+      tags: {
+        $all: ["office", "school"]
+      }
+    }
+  }
 })
 
 // use("sample_mflix")
