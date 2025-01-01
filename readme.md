@@ -9,3 +9,7 @@ $and
 $or
 $nor
 $not
+
+# Les opérateurs d'évaluation
+$regex
+$expr permet notamment de comparer des champs d'un même document entre eux..

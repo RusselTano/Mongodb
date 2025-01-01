@@ -1,51 +1,22 @@
 use("sample_mflix")
 
-// db.movies.find({
-//       "imdb.rating": { $gt: 8 },
-//       "tomatoes.viewer.rating": { $gt: 4 }
-// })
-// db.movies.find({
-//   $or: [
+db.movies.find({
+  // title: /.*murder.*/i
+  title: { $in: [/.*cops.*/i, /.*thief.*/i] }
+})
+
+
+// db.movies.countDocuments(
 //     {
-//       "imdb.rating": { $gt: 8 }
-//     },
-//     {
-//       "tomatoes.viewer.rating": { $gt: 4 }
+//         title: { $regex: /^The land/, $options: 'i' }
 //     }
-//   ]
-// })
-db.movies.find({
-  $and: [
-    {
-      "imdb.rating": { $gt: 8 }
-    },
-    {
-      "tomatoes.viewer.rating": { $gt: 4 }
-    }
-  ]
-})
-
-db.movies.find({
-  $and: [
-    {
-      $or: [
-        { "imdb.rating": { $gt: 8 } },
-        { "tomatoes.viewer.rating": { $gt: 4 } }
-      ]
-    },
-    {
-      $or: [
-        { year: 1929 },
-        { year: 1930 }
-      ]
-    }
-  ]
-})
-
+// )
 use('sample_mflix');
-db.movies.countDocuments(
+db.movies.find(
     {
-        'imdb.rating': { $not: { $lte: 9 } }
+        $expr: {
+            $lt: ['$imdb.rating', {$multiply: ['$tomatoes.viewer.rating', 2] }]
+        }
     }
 )
-//Attention ! Ce n'est pas la même chose que { $gt: 9 }, car les documents qui n'ont pas le champ spécifié sont aussi sélectionnés.
+//L'opérateur $expr permet notamment de comparer des champs d'un même document entre eux..
