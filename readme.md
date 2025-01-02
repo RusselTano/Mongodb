@@ -95,4 +95,18 @@ db.students.findOneAndUpdate({},
 )
 ```
 
-On peut utilser es trois a la fois
+# Les opérateurs de mise à jour $pull, $pullAll et $pop
+
+```js
+use('school');
+db.students.findOneAndUpdate({},
+  {
+    $pop: {
+      grades: -1,
+    }
+  },
+  {returnDocument: 'after'}
+)
+```
+
+# L'opérateur $ pour mettre à jour un élément spécifique d'un tableau sans specifier sa position
