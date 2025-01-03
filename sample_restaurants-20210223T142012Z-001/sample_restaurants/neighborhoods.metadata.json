@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"sample_restaurants.neighborhoods"}],"uuid":"906e9e93cd0445dfa40be92a53817f87","collectionName":"neighborhoods"}
