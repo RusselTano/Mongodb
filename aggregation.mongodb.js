@@ -21,6 +21,15 @@ db.movies.aggregate([
     $skip: 1
   },
   {
-    $out: "selectedMovie"
-  }
+    $addFields: {
+      title: 1,
+      averageRating: {
+        $divide: [{
+          $add: ["$imdb.rating", {
+            $multiply: ["$tomatoes.viewer.rating", 2]
+          }]
+        }, 2]
+      }
+    }
+  },
 ])
